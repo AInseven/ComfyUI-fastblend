@@ -11,6 +11,6 @@ fastblend的节点：
 
 例子在我上传的.json里，还有别的节点其实没多大用，有的还用不成，就不介绍了。
 
-安装：下载.zip解压到ComfyUI\custom_nodes就可以了
+Install：download the .zip and unzip to ComfyUI\custom_nodes, And rename the folder name to AInseven. I will solve the rename problem later.
 
 
