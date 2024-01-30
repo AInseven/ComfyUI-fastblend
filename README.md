@@ -13,4 +13,6 @@ fastblend的节点：
 
 Install：download the .zip and unzip to ComfyUI\custom_nodes, And rename the folder name to AInseven. I will solve the rename problem later.
 
+Fastblend main code is from https://github.com/Artiprocher/sd-webui-fastblend
 
+I just made it work in ComfyUI.
