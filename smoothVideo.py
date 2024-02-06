@@ -1,4 +1,4 @@
-from custom_nodes.AInseven.FastBlend.api import smooth_video
+from .FastBlend.api import smooth_video
 
 import numpy as np
 import torch

@@ -1,4 +1,4 @@
-from custom_nodes.AInseven.FastBlend.api import interpolate_video
+from .FastBlend.api import interpolate_video
 
 import numpy as np
 import torch
