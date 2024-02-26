@@ -1,2 +1,1 @@
 cupy-cuda12x
-gradio

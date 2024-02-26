@@ -16,7 +16,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 12,
+      "order": 15,
       "mode": 0,
       "inputs": [
         {
@@ -126,7 +126,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 13,
+      "order": 16,
       "mode": 0,
       "inputs": [
         {
@@ -161,10 +161,10 @@
         1696,
         188
       ],
-      "size": [
-        315,
-        262
-      ],
+      "size": {
+        "0": 315,
+        "1": 262
+      },
       "flags": {},
       "order": 21,
       "mode": 0,
@@ -225,7 +225,7 @@
         "1": 126
       },
       "flags": {},
-      "order": 10,
+      "order": 8,
       "mode": 0,
       "inputs": [
         {
@@ -279,7 +279,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 8,
+      "order": 10,
       "mode": 0,
       "inputs": [
         {
@@ -382,7 +382,7 @@
         "1": 82
       },
       "flags": {},
-      "order": 15,
+      "order": 12,
       "mode": 0,
       "inputs": [
         {
@@ -422,7 +422,7 @@
         "1": 58
       },
       "flags": {},
-      "order": 11,
+      "order": 9,
       "mode": 0,
       "inputs": [
         {
@@ -610,7 +610,7 @@
         "1": 160.888671875
       },
       "flags": {},
-      "order": 16,
+      "order": 13,
       "mode": 0,
       "inputs": [
         {
@@ -648,7 +648,7 @@
         "1": 116.50862121582031
       },
       "flags": {},
-      "order": 17,
+      "order": 14,
       "mode": 0,
       "inputs": [
         {
@@ -683,7 +683,7 @@
       ],
       "size": [
         515.0252075195312,
-        1116.2670355902778
+        290
       ],
       "flags": {},
       "order": 26,
@@ -693,9 +693,26 @@
           "name": "images",
           "type": "IMAGE",
           "link": 100
+        },
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
+          "link": null
+        },
+        {
+          "name": "batch_manager",
+          "type": "VHS_BatchManager",
+          "link": null
         }
       ],
-      "outputs": [],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null,
+          "shape": 3
+        }
+      ],
       "properties": {
         "Node name for S&R": "VHS_VideoCombine"
       },
@@ -704,11 +721,11 @@
         "loop_count": 0,
         "filename_prefix": "smoothvideo",
         "format": "video/h264-mp4",
-        "pingpong": false,
-        "save_image": true,
+        "pix_fmt": "yuv420p",
         "crf": 20,
         "save_metadata": true,
-        "audio_file": "",
+        "pingpong": false,
+        "save_output": true,
         "videopreview": {
           "hidden": false,
           "paused": false,
@@ -771,52 +788,6 @@
       ]
     },
     {
-      "id": 17,
-      "type": "VHS_LoadVideoPath",
-      "pos": [
-        249,
-        -449
-      ],
-      "size": {
-        "0": 316.53924560546875,
-        "1": 203.3125
-      },
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            43
-          ],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "frame_count",
-          "type": "INT",
-          "links": [
-            27
-          ],
-          "shape": 3,
-          "slot_index": 1
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "VHS_LoadVideoPath"
-      },
-      "widgets_values": {
-        "video": "C:\\AE\\2023-11-07 105146\\2023-11-07 105146.mov",
-        "force_rate": 0,
-        "force_size": "Disabled",
-        "frame_load_cap": 5,
-        "skip_first_frames": 0,
-        "select_every_nth": 3
-      }
-    },
-    {
       "id": 5,
       "type": "EmptyLatentImage",
       "pos": [
@@ -828,7 +799,7 @@
         "1": 106
       },
       "flags": {},
-      "order": 9,
+      "order": 11,
       "mode": 0,
       "inputs": [
         {
@@ -857,30 +828,9 @@
         720,
         1280,
         1
-      ]
-    },
-    {
-      "id": 63,
-      "type": "Note",
-      "pos": [
-        602,
-        -452
       ],
-      "size": {
-        "0": 268.365966796875,
-        "1": 194.61764526367188
-      },
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "properties": {
-        "text": ""
-      },
-      "widgets_values": [
-        "Load Video(Path):\n  frame_load_cap：0就是全部帧都导入，测试效果可以先改小的数字\n  select_every_nth：多少帧选一个关键帧\n\nEmpty Latent Image:\n  分辨率大小，和输入视频的一致\n"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
+      "color": "#223",
+      "bgcolor": "#335"
     },
     {
       "id": 31,
@@ -896,7 +846,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 14,
+      "order": 17,
       "mode": 0,
       "inputs": [
         {
@@ -924,73 +874,6 @@
       ]
     },
     {
-      "id": 60,
-      "type": "VHS_LoadVideoPath",
-      "pos": [
-        2219,
-        -355
-      ],
-      "size": {
-        "0": 316.53924560546875,
-        "1": 203.3125
-      },
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            95
-          ],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "frame_count",
-          "type": "INT",
-          "links": [],
-          "shape": 3,
-          "slot_index": 1
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "VHS_LoadVideoPath"
-      },
-      "widgets_values": {
-        "video": "C:\\AE\\2023-11-07 105146\\2023-11-07 105146.mov",
-        "force_rate": 0,
-        "force_size": "Disabled",
-        "frame_load_cap": 13,
-        "skip_first_frames": 0,
-        "select_every_nth": 1
-      }
-    },
-    {
-      "id": 62,
-      "type": "Note",
-      "pos": [
-        2659,
-        -400
-      ],
-      "size": {
-        "0": 581.3618774414062,
-        "1": 207.76344299316406
-      },
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "properties": {
-        "text": ""
-      },
-      "widgets_values": [
-        "Load Video(Path):\n   导入keyframe对应的原始帧\n   1、video路径和前面的Load Video(Path)的一样\n   2、frame load cap：\n         如果是测试：等于前面那个Load Video(Path)的  select_every_nth*frame load cap\n         如果不是测试：改成0，即全部的帧\n   3、select_every_nth：0\n\nInterpolate KeyFrame:\n   1、select_every_nth：和最前面的Load Video(Path)的一样\n   2、其它参数默认也能用，我还没调过\nVideo Combine:\n   frame_rate：输出的fps，这个可以和原视频的不一样\n"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
       "id": 44,
       "type": "VHS_VideoCombine",
       "pos": [
@@ -999,7 +882,7 @@
       ],
       "size": [
         363.3934631347656,
-        846.6994900173611
+        290
       ],
       "flags": {},
       "order": 25,
@@ -1009,9 +892,26 @@
           "name": "images",
           "type": "IMAGE",
           "link": 103
+        },
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
+          "link": null
+        },
+        {
+          "name": "batch_manager",
+          "type": "VHS_BatchManager",
+          "link": null
         }
       ],
-      "outputs": [],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null,
+          "shape": 3
+        }
+      ],
       "properties": {
         "Node name for S&R": "VHS_VideoCombine"
       },
@@ -1020,11 +920,11 @@
         "loop_count": 0,
         "filename_prefix": "KSampler",
         "format": "video/h264-mp4",
-        "pingpong": false,
-        "save_image": true,
+        "pix_fmt": "yuv420p",
         "crf": 20,
         "save_metadata": true,
-        "audio_file": "",
+        "pingpong": false,
+        "save_output": true,
         "videopreview": {
           "hidden": false,
           "paused": false,
@@ -1129,7 +1029,7 @@
         "1": 98
       },
       "flags": {},
-      "order": 7,
+      "order": 3,
       "mode": 0,
       "outputs": [
         {
@@ -1162,6 +1062,204 @@
       "widgets_values": [
         "anime\\anything-v5-PrtRE.safetensors"
       ]
+    },
+    {
+      "id": 60,
+      "type": "VHS_LoadVideoPath",
+      "pos": [
+        2219,
+        -355
+      ],
+      "size": [
+        316.53924560546875,
+        218
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "batch_manager",
+          "type": "VHS_BatchManager",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            95
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "title": "Load ALL Frames",
+      "properties": {
+        "Node name for S&R": "VHS_LoadVideoPath"
+      },
+      "widgets_values": {
+        "video": "path",
+        "force_rate": 0,
+        "force_size": "Disabled",
+        "custom_width": 512,
+        "custom_height": 512,
+        "frame_load_cap": 13,
+        "skip_first_frames": 0,
+        "select_every_nth": 1,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "frame_load_cap": 13,
+            "skip_first_frames": 0,
+            "force_rate": 0,
+            "filename": "path",
+            "type": "path",
+            "format": "video/path",
+            "select_every_nth": 1
+          }
+        }
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 63,
+      "type": "Note",
+      "pos": [
+        602,
+        -452
+      ],
+      "size": {
+        "0": 268.365966796875,
+        "1": 194.61764526367188
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "Load Keyframe:\n  frame_load_cap：0就是全部帧都导入，测试效果可以先改小的数字\n  select_every_nth：多少帧选一个关键帧\n\nEmpty Latent Image:\n  分辨率大小，和输入视频的一致\n"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 17,
+      "type": "VHS_LoadVideoPath",
+      "pos": [
+        249,
+        -449
+      ],
+      "size": [
+        316.53924560546875,
+        218
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "batch_manager",
+          "type": "VHS_BatchManager",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            43
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": [
+            27
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "title": "Load Keyframe",
+      "properties": {
+        "Node name for S&R": "VHS_LoadVideoPath"
+      },
+      "widgets_values": {
+        "video": "C:\\AE\\2023-11-07 105146\\2023-11-07 105146.mov",
+        "force_rate": 0,
+        "force_size": "Disabled",
+        "custom_width": 512,
+        "custom_height": 512,
+        "frame_load_cap": 5,
+        "skip_first_frames": 0,
+        "select_every_nth": 3,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "frame_load_cap": 5,
+            "skip_first_frames": 0,
+            "force_rate": 0,
+            "filename": "C:\\AE\\2023-11-07 105146\\2023-11-07 105146.mov",
+            "type": "path",
+            "format": "video/mov",
+            "select_every_nth": 3
+          }
+        }
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 62,
+      "type": "Note",
+      "pos": [
+        2655,
+        -342
+      ],
+      "size": {
+        "0": 581.3618774414062,
+        "1": 207.76344299316406
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "Load ALL Frames:\n   导入keyframe对应的原始帧\n   1、video path is same as Load Keyframe\n   2、frame load cap：\n         如果是测试：等于前面那个Load Keyframe的  select_every_nth*frame load cap\n         如果不是测试：改成0，即全部的帧\n   3、select_every_nth：1 (must be 1)\n\nInterpolate KeyFrame:\n   1、select_every_nth：same as Load Keyframe\n   2、其它参数默认也能用，我还没调过\nVideo Combine:\n   frame_rate：输出的fps，这个可以和原视频的不一样\n"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
     }
   ],
   "links": [
