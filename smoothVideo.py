@@ -54,7 +54,7 @@ class SmoothVideo:
                     "default": 5,
                     "min": 0,  # Minimum value
                     "max": 100,  # Maximum value
-                    "step": 1,  # Slider's step
+                    "step": 2,  # Slider's step
                     "display": "number"  # Cosmetic only: display as "number" or "slider"
                 }),
                 "num_iter": ("INT", {
