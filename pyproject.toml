@@ -1,0 +1,15 @@
+[project]
+name = "comfyui-fastblend"
+description = "fastblend for comfyui, and other nodes that I write for video2video. rebatch image, my openpose"
+version = "1.0.0"
+license = "LICENSE"
+dependencies = ["cupy-cuda12x"]
+
+[project.urls]
+Repository = "https://github.com/AInseven/ComfyUI-fastblend"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "ComfyUI-fastblend"
+Icon = ""
