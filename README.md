@@ -11,7 +11,7 @@ parameter meaning:
    - num_iter: Number of iterations, larger is better
    - Guide weight: a parameter that determines how much motion feature applied to the style video.
    - Batch size: a larger batch size makes the program faster but requires more VRAM.
-time complexity(accuracy=1): log(window_size) * minimum_patch_size^2 * num_iter * video length * video resolution
+   - time complexity(accuracy=1): log(window_size) * minimum_patch_size^2 * num_iter * video length * video resolution
 
 other nodes for making video:  
 1. rebatchimage: especially for fastblend，Simultaneously render images (720p, 24G video memory, batch_size can be adjusted to 40), speed up about 40%.  
