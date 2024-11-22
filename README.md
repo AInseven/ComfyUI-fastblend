@@ -5,12 +5,12 @@ fastblend node：
 1. smoothvideo（逐帧渲染/smooth video use each frames）  
 2. interpolateKeyFrame（插帧、只选一部分帧渲染/smooth video only use a portion of the frames）
 parameter meaning:
-   (1) accuracy: larger is better, 1 is enough for most situation
-   (2) window_size: how smooth the video.
-   (3) minimum_patch_size: odd number(important), larger is better
-   (4) num_iter: Number of iterations, larger is better
-   (5) Guide weight: a parameter that determines how much motion feature applied to the style video.
-   (6) Batch size: a larger batch size makes the program faster but requires more VRAM.
+   - accuracy: larger is better, 1 is enough for most situation
+   - window_size: how smooth the video.
+   - minimum_patch_size: odd number(important), larger is better
+   - num_iter: Number of iterations, larger is better
+   - Guide weight: a parameter that determines how much motion feature applied to the style video.
+   - Batch size: a larger batch size makes the program faster but requires more VRAM.
 time complexity(accuracy=1): log(window_size) * minimum_patch_size^2 * num_iter * video length * video resolution
 
 other nodes for making video:  
